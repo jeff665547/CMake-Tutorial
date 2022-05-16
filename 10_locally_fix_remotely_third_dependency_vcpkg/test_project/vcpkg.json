@@ -11,5 +11,11 @@
       "version>=": "0.1.0#1"
     }
   ],
+  "overrides": [
+    {
+      "name": "spdlog", 
+      "version": "1.9.2"
+    }
+  ],
   "builtin-baseline": "97b723c3467f53fc49ea9c8c118658ee526d7817"
 }
