@@ -1,0 +1,14 @@
+@PACKAGE_INIT@
+
+# Get definition of 'find_dependency' macro
+include(CMakeFindDependencyMacro)
+# Find spdlog. This will create 'spdlog' target
+find_dependency(spdlog)
+
+# Include CMake-generated config file for the 'Maths' target
+# which uses 'spdlog' target.
+include(${CMAKE_CURRENT_LIST_DIR}/@pkg_config_targets_file@)
+
+set_and_check(Maths_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+set(Maths_LIBRARIES Maths::maths_library)
+check_required_components(Maths)

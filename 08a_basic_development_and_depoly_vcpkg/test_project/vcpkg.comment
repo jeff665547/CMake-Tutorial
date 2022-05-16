@@ -1,0 +1,36 @@
+{
+  "name": "demotest",
+  "version": "0.0.1", // Current project's version declaration "version": Dot-separated numerics, "version-string":	Arbitrary strings
+  "dependencies":[
+    {
+      "name": "fmt",
+      "version>=": "7.1.3#1" // "version>=": Minimum version constraints, it is allowed only as part of the "dependencies". 
+                             // vcpkg will use the minimum version ("7.1.3#1") that satisfies this constraint. If other 
+                             // dependencies require a newer version of this package, vcpkg will automatically use the newer
+                             // one. The advantages of this approach are that you don't get unexpected dependency upgrades 
+                             // when you update vcpkg and you get reproducible builds (in terms of version used) as long as 
+                             // you use the same manifest.
+    }
+  ],
+  "builtin-baseline": "3426db05b996481ca31e95fff3734cf23e0f51bc",// The versioning baseline for all ports. This value is the 
+                                                                 // commit SHA value of some specific commit of the official 
+                                                                 // vcpkg registry (https://github.com/microsoft/vcpkg). It 
+                                                                 // can also be derived by running 'git rev-parse HEAD' to 
+                                                                 // get the current commit SHA of vcpkg. Package without specified 
+                                                                 // the version constraints will automatically use the latest
+                                                                 // version at that commit time. This baseline is viewed as the 
+                                                                 // minimum version constraints (version floor) for all packages. 
+                                                                 // If a package is specified to an older (relative to the baseline) 
+                                                                 // version constranits (by setting the "dependencies" above), vcpkg 
+                                                                 // will automatically upgrade the package to the baseline version.
+                                                                 // Baselines are also a convenient mechanism to upgrade multiple 
+                                                                 // versions at a time. If we want to downgrade versions past the 
+                                                                 // baseline, use "overrides" to force vcpkg to use the exact 
+                                                                 // version declared.
+  "overrides": [
+    {
+      "name": "fmt",
+      "version": "6.0.0"
+    }
+  ]
+}

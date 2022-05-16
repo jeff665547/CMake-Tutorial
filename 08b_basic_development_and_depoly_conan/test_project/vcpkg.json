@@ -1,0 +1,15 @@
+{
+  "name": "demotest",
+  "version": "0.0.1",
+  "dependencies":[
+    {
+      "name": "fmt",
+      "version>=": "7.1.3#1"
+    },
+    {
+      "name": "gtest",
+      "version>=": "1.10.0"
+    }
+  ],
+  "builtin-baseline": "3426db05b996481ca31e95fff3734cf23e0f51bc"
+}

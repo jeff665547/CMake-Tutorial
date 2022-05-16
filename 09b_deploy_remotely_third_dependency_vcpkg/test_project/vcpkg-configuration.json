@@ -1,0 +1,10 @@
+{
+    "registries": [
+        {
+            "kind": "git", 
+            "repository": "http://gitlab.centrilliontech.com.tw:10088/centrillion/vcpkg-registries.git",
+            "baseline": "98fdd7aac81f75381a4d66f20fb0f51806258879",
+            "packages": [ "maths" ]
+        }
+    ]
+}

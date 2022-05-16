@@ -1,0 +1,15 @@
+{
+  "name": "mathsdemotest",
+  "version": "0.0.1",
+  "dependencies":[
+    {
+      "name": "nlohmann-json",
+      "version>=": "3.10.5"
+    },
+    {
+      "name": "maths",
+      "version>=": "0.1.0#1"
+    }
+  ],
+  "builtin-baseline": "97b723c3467f53fc49ea9c8c118658ee526d7817"
+}
