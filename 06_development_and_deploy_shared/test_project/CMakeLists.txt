@@ -22,17 +22,16 @@ target_link_libraries(MathsDemo
 # -------------------------------------------------------------------------------------------------------
 # The *.dll file of the library (Maths::maths_library) will be copied from the specified directory.
 if(INSTALL_DEPS)
-    if(WIN32)
-        configure_file(
-            cmake/bundle.cmake.in 
-            ${CMAKE_BINARY_DIR}/bundle.cmake @ONLY
-        )
-    endif()
+    configure_file(
+        "cmake/${CMAKE_HOST_SYSTEM_NAME}/bundle.cmake.in" 
+        "${CMAKE_BINARY_DIR}/bundle.cmake" @ONLY
+    )
     install(
-        SCRIPT ${CMAKE_BINARY_DIR}/bundle.cmake
+        SCRIPT "${CMAKE_BINARY_DIR}/bundle.cmake"
     )
 endif()
 
 # CMake commands: 
-# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_PREFIX_PATH:PATH=../custom_library/install/lib/cmake
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_PREFIX_PATH:PATH=../custom_library/install/lib/cmake
+# WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_PREFIX_PATH:PATH=../custom_library/install/lib/cmake
 # cmake --build . --target install

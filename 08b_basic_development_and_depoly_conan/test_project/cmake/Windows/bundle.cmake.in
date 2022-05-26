@@ -1,6 +1,5 @@
 include(BundleUtilities)
-# file(READ "@CMAKE_SOURCE_DIR@/install-deps-root-dir" deps_root_dir)
-set(deps_root_dir "@CMAKE_BINARY_DIR@/vcpkg_installed/@VCPKG_TARGET_TRIPLET@")
+file(READ "@CMAKE_SOURCE_DIR@/install-deps-root-dir" deps_root_dir)
 message(STATUS "deps_root_dir ${deps_root_dir}")
 file(GLOB_RECURSE lib_paths "${CMAKE_INSTALL_PREFIX}/*@CMAKE_SHARED_LIBRARY_SUFFIX@")
 message(STATUS "lib_paths ${lib_paths}")
@@ -10,6 +9,6 @@ foreach(app ${app_paths})
     fixup_bundle(
         "${app}"
         ""
-        "${deps_root_dir}/bin;${deps_root_dir}/lib;@BUNDLE_RT_DIRS@"
+        "${deps_root_dir};${deps_root_dir}/bin;${deps_root_dir}/lib"
     )
 endforeach()

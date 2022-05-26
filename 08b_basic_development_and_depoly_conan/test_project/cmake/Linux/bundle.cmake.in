@@ -1,0 +1,9 @@
+file(READ "@CMAKE_SOURCE_DIR@/install-deps-root-dir" deps_root_dir)
+message(STATUS "deps_root_dir ${deps_root_dir}")
+
+foreach(dd ${deps_root_dir})
+    file(GLOB tmp "${dd}/*@CMAKE_SHARED_LIBRARY_SUFFIX@*")
+    list(APPEND libs ${tmp})
+endforeach()
+
+file(INSTALL ${libs} DESTINATION @CMAKE_INSTALL_FULL_LIBDIR@)

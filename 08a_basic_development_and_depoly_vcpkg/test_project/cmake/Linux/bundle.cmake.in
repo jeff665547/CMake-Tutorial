@@ -1,0 +1,10 @@
+# file(READ "@CMAKE_SOURCE_DIR@/install-deps-root-dir" deps_root_dir)
+set(deps_root_dir "@CMAKE_BINARY_DIR@/vcpkg_installed/@VCPKG_TARGET_TRIPLET@")
+message(STATUS "deps_root_dir ${deps_root_dir}")
+
+foreach(dd ${deps_root_dir})
+    file(GLOB_RECURSE tmp "${dd}/*@CMAKE_SHARED_LIBRARY_SUFFIX@*")
+    list(APPEND libs ${tmp})
+endforeach()
+
+file(INSTALL ${libs} DESTINATION @CMAKE_INSTALL_FULL_LIBDIR@)

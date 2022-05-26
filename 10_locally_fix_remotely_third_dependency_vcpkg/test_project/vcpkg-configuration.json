@@ -3,7 +3,7 @@
         {
             "kind": "git", 
             "repository": "http://gitlab.centrilliontech.com.tw:10088/centrillion/vcpkg-registries.git",
-            "baseline": "a215808fa74bc17196dd5430f858a276d40b2d4b",
+            "baseline": "4063d3f3b4661b34c16d63f322b424aa185354e2",
             "packages": [ "maths" ]
         }
     ]

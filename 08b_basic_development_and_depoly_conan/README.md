@@ -6,7 +6,7 @@
     * g++: e.g. mingw64
     * Command Prompt (cmd) is required.
 
-1. Create, enter a virtual environment (venv) and install the Conan.
+1.a Create, enter a virtual environment (venv) and install the Conan. (Windows)
     * pip install virtualenvwrapper-win
     * mkvirtualenv venv
     * pip install conan
@@ -14,10 +14,14 @@
     * (optional) workon                    --> List the available virtual environments.
     * (optional) workon/rmvirtualenv venv  --> Activate/Remove venv.
 
+1.b Globally install the Conan. (Linux)
+    * pip install conan
+    * source ~/.profile
+
 2. Create the conanfile.txt with the integration generator and the specified dependencies with their versions under this project's directory.
 
 3. Create a profile to specify the compiler and other environment settings we used.
-    * e.g. mingw64 @ C:/Users/<UserName>/.conan/profiles
+    * e.g. Windows: mingw64 @ C:/Users/<UserName>/.conan/profiles or Linux: gcc_x64 @ ~/.conan/profiles
 
 4. Go to the build directory under our project, build and install the required dependencies from the source and generate the information for integrating into the CMake building process.
     * conan install .. --build=missing --profile=mingw64  or  conan install .. --build=missing -pr=mingw64

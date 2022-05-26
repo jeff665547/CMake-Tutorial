@@ -28,5 +28,6 @@ target_link_libraries(development_and_gtest_ext_dep_main
 )
 
 # CMake commands:
-# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=ON
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release
+# WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=ON
 # cmake --build . 

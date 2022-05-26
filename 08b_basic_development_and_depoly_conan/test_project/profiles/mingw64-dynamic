@@ -1,0 +1,5 @@
+include(mingw64) 
+
+[options]
+*:shared=True # for building the shared library for many packages
+[env]

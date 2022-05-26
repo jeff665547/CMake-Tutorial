@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.15)
+cmake_policy(SET CMP0057 NEW)
+include(BundleUtilities)
+file(READ "@CMAKE_SOURCE_DIR@/install-deps-root-dir" deps_root_dir)
+message(STATUS "deps_root_dir ${deps_root_dir}")
+file(GLOB_RECURSE deps_paths "${deps_root_dir}/*@CMAKE_SHARED_LIBRARY_SUFFIX@")
+message(STATUS "deps_paths ${deps_paths}")
+set(deps_dirs)
+foreach(dep ${deps_paths})
+    get_filename_component(dep_dir ${dep} DIRECTORY)
+    message(STATUS "deps_dir: ${dep_dir}")
+    if (NOT dep_dir IN_LIST deps_dirs)
+        list(APPEND deps_dirs ${dep_dir})
+    endif()
+endforeach()
+message(STATUS "${deps_dirs}")
+message("===========================================================================")
+file(GLOB_RECURSE lib_paths "${CMAKE_INSTALL_PREFIX}/*@CMAKE_SHARED_LIBRARY_SUFFIX@")
+message(STATUS "lib_paths ${lib_paths}")
+file(GLOB_RECURSE app_paths "${CMAKE_INSTALL_PREFIX}/*@CMAKE_EXECUTABLE_SUFFIX@")
+message(STATUS "app_paths ${app_paths}")
+foreach(app ${app_paths})
+    fixup_bundle(
+        "${app}"
+        ""
+        "${deps_dirs}"
+    )
+endforeach()

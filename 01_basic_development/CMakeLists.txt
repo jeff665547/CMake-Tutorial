@@ -8,5 +8,6 @@ project(basic_development)
 add_executable(basic_development_main add.h calc_status.h add.cpp main.cpp)
 
 # CMake commands:
-# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release
+# WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release
 # cmake --build .

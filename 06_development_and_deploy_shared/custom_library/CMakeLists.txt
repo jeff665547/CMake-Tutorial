@@ -27,8 +27,8 @@ include(GNUInstallDirs)
 #    or %ProgramFiles(x86)%. I normally opt for the latter.
 #
 # ---------------------------------------------------------------------------------------
-# Automatically set the CMAKE_INSTALL_RPATH path for the UNIX system for building shared 
-# lib, so that users can find the installed library.
+# Automatically set the CMAKE_INSTALL_RPATH (runtime path) path for the UNIX system for 
+# building shared lib, so that users can find the installed library.
 # ---------------------------------------------------------------------------------------
 if (UNIX)
     file(RELATIVE_PATH relativeRpath
@@ -120,6 +120,7 @@ if(BUILD_EXAMPLE)
     endif()
 endif()
 
-# CMake command:  
-# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=../install -DBUILD_TESTING:BOOL=ON
+# CMake command:
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=../install -DBUILD_TESTING:BOOL=ON 
+# WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_SHARED_LIBS:BOOL=ON -DCMAKE_INSTALL_PREFIX:PATH=../install -DBUILD_TESTING:BOOL=ON
 # cmake --build . --target install

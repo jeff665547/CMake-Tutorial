@@ -4,13 +4,13 @@
     * Git
     * g++ >= 6
 
-1. Preparation for the MinGW-w64 compiler:
+1. Preparation for the (MinGW-w64) compiler:
     * Install native MinGW-w64 from SourceForge.net. (demonstrated in this test_project) (Could generate some unexpected issues during the building process with the vcpkg manifests mode, and those could only be solved by the community involvement.)
     * Install MSYS2 (mingw subsystem of MSYS2, more stable with the vcpkg manifests mode) to build software for native windows environments from the link https://www.msys2.org/ and follow the instruction in this post. (https://github.com/microsoft/vcpkg/blob/master/docs/users/mingw.md#How-to-avoid-mixing-different-installations)
 
 2. Clone, install, and build vcpkg as a submodule to an existing application project (official recommendations).
     * Clone the repo: git clone https://github.com/Microsoft/vcpkg.git
-    * Run the bootstrap script to build vcpkg: ./vcpkg/bootstrap-vcpkg.bat
+    * Run the bootstrap script to build vcpkg: ./vcpkg/bootstrap-vcpkg.bat (./vcpkg/bootstrap-vcpkg.sh)
 
 3.a Check, search, install, and remove libraries for the application project through classic vcpkg methods
     * vcpkg list
@@ -24,7 +24,7 @@
 4. Reference and use the installed libraries with CMake and MinGW.
     * Reference and use the installed library through the find_package() and target_link_libraries() commands in the CMakeLists.txt files under the application project.
     * Configuration for generating the Makefile: 
-      cmake [build directory] -G "MinGW Makefiles" -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET="x64-mingw-dynamic" or "x64-mingw-static"
+      cmake [build directory] -G "MinGW Makefiles" -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET="x64-mingw-dynamic" or "x64-mingw-static" (accroding to the selected compiler and the building mode.)
     * Build and install the project:
       cmake --build . --target install
 

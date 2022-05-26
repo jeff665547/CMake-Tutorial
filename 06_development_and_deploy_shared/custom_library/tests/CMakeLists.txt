@@ -7,7 +7,7 @@ FetchContent_Declare(
     GIT_TAG release-1.10.0
 )
 
-set(INSTALL_GTEST ON)  # Enable gtest calling install for its own targets.
+set(INSTALL_GTEST OFF)  # Disable gtest calling install for its own targets.
 FetchContent_MakeAvailable(googletest)
 
 set(FETCHCONTENT_UPDATES_DISCONNECTED ON CACHE BOOL "")

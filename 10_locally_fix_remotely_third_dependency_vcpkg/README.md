@@ -7,7 +7,7 @@ Fix the local bug and experimentally distributed -- Patching Mechanism.
 * 4. Save the patch result from the git diff output into the ports/<library/module> directory:
     e.g. For Windows PowerShell: git diff --ignore-space-at-eol | out-file -enc ascii ..\..\..\..\..\vcpkg-registries\ports\maths\disable-the-example-executable.patch
 * 5. Specify and apply the patch file in the portfile.cmake under the ports/<library/module> directory in the registry.
-* 6. (Optional) Clear the previous building cache of vcpkg ([project]/build, vcpkg/buildtrees, vcpkg/downloads, vcpkg/packages, User/AppData/Local/vcpkg).
+* 6. (Optional) Clear the previous building cache of vcpkg ([project]/build, vcpkg/buildtrees, vcpkg/downloads, vcpkg/packages, WIN: User/AppData/Local/vcpkg, Linux: ~/.cache/vcpkg).
 * 7. Build the application project with the -DVCPKG_OVERLAY_PORTS option at the CMake configuration:
     e.g. cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_INSTALL_PREFIX:PATH="../install" -DCMAKE_TOOLCHAIN_FILE="../../vcpkg/scripts/buildsystems/vcpkg.cmake" -DVCPKG_TARGET_TRIPLET="x64-mingw-dynamic" -DVCPKG_OVERLAY_PORTS="../../vcpkg-registries/ports/maths"
 * 8. Make sure the updated results behaves as expected and the following message shows during the CMake configuration process.

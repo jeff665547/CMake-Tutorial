@@ -22,5 +22,6 @@ add_executable(modular_development_main main.cpp)
 target_link_libraries(modular_development_main PRIVATE maths_library)
 
 # CMake commands:
-# cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release 
+# WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release
 # cmake --build . 
