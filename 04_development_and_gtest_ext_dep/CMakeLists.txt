@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-
+set(CMAKE_CXX_STANDARD 11)
 project(development_and_gtest_ext_dep)
 
 include(cmake/project_configuration.cmake)
@@ -28,6 +28,6 @@ target_link_libraries(development_and_gtest_ext_dep_main
 )
 
 # CMake commands:
-# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release
+# UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=ON
 # WIN: cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_TESTING:BOOL=ON
 # cmake --build . 

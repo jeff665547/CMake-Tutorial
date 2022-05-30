@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
+set(CMAKE_CXX_STANDARD 11)
 project(HelloInstalling)
 include(GNUInstallDirs)
 
@@ -7,7 +8,8 @@ if (UNIX)
         "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}"
         "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}"
     )
-    set(CMAKE_INSTALL_RPATH "$ORIGIN" "$ORIGIN/${relativeRpath}")
+    set(run_time_exe_dir $<IF:${APPLE},@loader_path,$ORIGIN>)
+    set(CMAKE_INSTALL_RPATH "${run_time_exe_dir}" "${run_time_exe_dir}/${relativeRpath}")
 endif (UNIX)
 
 # Install the binary file of the shared library (e.g. *.dll).

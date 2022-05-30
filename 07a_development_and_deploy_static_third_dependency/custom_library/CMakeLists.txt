@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-
+set(CMAKE_CXX_STANDARD 11)
 project(development_and_deploy VERSION 0.1.0)
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 

@@ -15,9 +15,13 @@ gtest:shared=False  # for building the static library
 # For building the shared library
 bin, *.dll -> .  # Copies all .dll files from packages bin folder to my current working folder.
 bin, *.so* -> .  # Copies all .so files from packages bin folder to my current working folder.
+bin, *.dylib* -> .  # Copies all .dylib files from packages bin folder to my current working folder.
 lib, *.dll -> .  # Copies all .dll files from packages lib folder to my current working folder.
 lib, *.so* -> .  # Copies all .so files from packages lib folder to my current working folder.
+lib, *.dylib* -> .  # Copies all .dylib files from packages lib folder to my current working folder.
 bin, *.dll -> ./tests  # Copies all .dll files from packages bin folder to the tests folder for (Google) testing.
 bin, *.so* -> ./tests  # Copies all .so files from packages bin folder to the tests folder for (Google) testing.
+bin, *.dylib* -> ./tests  # Copies all .dylib files from packages bin folder to the tests folder for (Google) testing.
 lib, *.dll -> ./tests  # Copies all .dll files from packages lib folder to the tests folder for (Google) testing.
 lib, *.so* -> ./tests  # Copies all .so files from packages lib folder to the tests folder for (Google) testing.
+lib, *.dylib* -> ./tests  # Copies all .dylib files from packages lib folder to the tests folder for (Google) testing.

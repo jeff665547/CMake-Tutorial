@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-
+set(CMAKE_CXX_STANDARD 11)
 project(development_and_deploy VERSION 0.1.0)
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
@@ -35,7 +35,8 @@ if (UNIX)
         "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}"
         "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR}"
     )
-    set(CMAKE_INSTALL_RPATH $ORIGIN $ORIGIN/${relativeRpath})
+    set(run_time_exe_dir $<IF:${APPLE},@loader_path,$ORIGIN>)
+    set(CMAKE_INSTALL_RPATH "${run_time_exe_dir}" "${run_time_exe_dir}/${relativeRpath}")
 endif (UNIX)
 
 # Control where the static and shared libraries are built so that on windows
