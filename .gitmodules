@@ -12,7 +12,7 @@
 	url = https://github.com/microsoft/vcpkg.git
 [submodule "09b_deploy_remotely_third_dependency_vcpkg/vcpkg-registries"]
 	path = 09b_deploy_remotely_third_dependency_vcpkg/vcpkg-registries
-	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/vcpkg-registries.git
+	url = https://github.com/jeff665547/vcpkg-registries.git
 [submodule "10_locally_fix_remotely_third_dependency_vcpkg/custom_library"]
 	path = 10_locally_fix_remotely_third_dependency_vcpkg/custom_library
 	url = https://github.com/jeff665547/Module-Template.git
@@ -21,4 +21,4 @@
 	url = https://github.com/microsoft/vcpkg.git
 [submodule "10_locally_fix_remotely_third_dependency_vcpkg/vcpkg-registries"]
 	path = 10_locally_fix_remotely_third_dependency_vcpkg/vcpkg-registries
-	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/vcpkg-registries.git
+	url = https://github.com/jeff665547/vcpkg-registries.git
