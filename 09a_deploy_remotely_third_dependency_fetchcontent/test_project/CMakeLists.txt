@@ -18,7 +18,7 @@ option(INSTALL_DEPS "Automatically install the binary file of the shared or stat
 include(FetchContent)
 FetchContent_Declare(
     maths
-    GIT_REPOSITORY http://gitlab.centrilliontech.com.tw:10088/centrillion/remoterepo.git # The link of the repository.
+    GIT_REPOSITORY http://gitlab.centrilliontech.com.tw:10088/centrillion/moduletemplate.git # The link of the repository.
     GIT_TAG v0.1.0-fetchcontent
 )
 FetchContent_MakeAvailable(maths)

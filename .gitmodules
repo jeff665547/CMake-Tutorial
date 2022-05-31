@@ -3,10 +3,10 @@
 	url = https://github.com/microsoft/vcpkg.git
 [submodule "09a_deploy_remotely_third_dependency_fetchcontent/custom_library"]
 	path = 09a_deploy_remotely_third_dependency_fetchcontent/custom_library
-	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/remoterepo.git
+	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/moduletemplate.git
 [submodule "09b_deploy_remotely_third_dependency_vcpkg/custom_library"]
 	path = 09b_deploy_remotely_third_dependency_vcpkg/custom_library
-	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/remoterepo.git
+	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/moduletemplate.git
 [submodule "09b_deploy_remotely_third_dependency_vcpkg/vcpkg"]
 	path = 09b_deploy_remotely_third_dependency_vcpkg/vcpkg
 	url = https://github.com/microsoft/vcpkg.git
@@ -15,7 +15,7 @@
 	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/vcpkg-registries.git
 [submodule "10_locally_fix_remotely_third_dependency_vcpkg/custom_library"]
 	path = 10_locally_fix_remotely_third_dependency_vcpkg/custom_library
-	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/remoterepo.git
+	url = http://gitlab.centrilliontech.com.tw:10088/centrillion/moduletemplate.git
 [submodule "10_locally_fix_remotely_third_dependency_vcpkg/vcpkg"]
 	path = 10_locally_fix_remotely_third_dependency_vcpkg/vcpkg
 	url = https://github.com/microsoft/vcpkg.git
