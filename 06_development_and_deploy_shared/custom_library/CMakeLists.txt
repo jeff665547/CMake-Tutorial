@@ -5,7 +5,7 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 option(BUILD_EXAMPLE "Build the example target." ON)
 option(PKG_INSTALL "Install (distribute) this package" ON)
 
-set(PKG_CONFIG_REQUIRES spdlog)  # This is set for building the *.pc file
+set(PKG_CONFIG_REQUIRES "")  # This is set for building the *.pc file
 
 include(cmake/project_configuration.cmake)
 include(GNUInstallDirs)
