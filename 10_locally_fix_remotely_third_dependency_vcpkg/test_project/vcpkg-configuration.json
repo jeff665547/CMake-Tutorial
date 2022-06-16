@@ -3,7 +3,7 @@
         {
             "kind": "git", 
             "repository": "https://github.com/jeff665547/vcpkg-registries.git",
-            "baseline": "52af8e9a92d2a3b277f64d019f1e65d02fb0164a",
+            "baseline": "743b4a3beaf9cb5df446988205c25152ac0dbbba",
             "packages": [ "maths" ]
         }
     ]

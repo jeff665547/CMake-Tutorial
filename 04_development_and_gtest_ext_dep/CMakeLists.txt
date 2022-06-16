@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.15)
-set(CMAKE_CXX_STANDARD 11)
 project(development_and_gtest_ext_dep)
 
 include(cmake/project_configuration.cmake)

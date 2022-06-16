@@ -15,7 +15,7 @@ target_compile_options(ProjectConfiguration
         -Wextra
         $<$<COMPILE_LANGUAGE:CXX>:-Weffc++>
 )
-target_compile_definitions(ProjectConfiguration
+target_compile_features(ProjectConfiguration
     INTERFACE
         cxx_std_17  # for -std=c++17
 )

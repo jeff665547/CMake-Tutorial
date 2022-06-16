@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.18)
-set(CMAKE_CXX_STANDARD 11)
 project(ManifestsModeDemo CXX)
 include(GNUInstallDirs)
 
@@ -25,6 +24,11 @@ target_sources(ManifestDemo
 target_link_libraries(ManifestDemo
     PRIVATE
         fmt::fmt
+)
+
+target_compile_features(ManifestDemo
+    PRIVATE
+        cxx_std_17
 )
 
 include(CTest)
