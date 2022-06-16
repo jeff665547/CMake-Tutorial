@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.15)
-set(CMAKE_CXX_STANDARD 11)
 project(modular_development)
 
 # ---------------------------------------------------------------------------------------
@@ -20,6 +19,8 @@ add_executable(modular_development_main main.cpp)
 # Specify the dependency or some properties used for building the executable target.
 # ---------------------------------------------------------------------------------------
 target_link_libraries(modular_development_main PRIVATE maths_library)
+
+target_compile_features(modular_development_main PRIVATE cxx_std_11)
 
 # CMake commands:
 # UNIX: cmake .. -DCMAKE_BUILD_TYPE:STRING=Release 

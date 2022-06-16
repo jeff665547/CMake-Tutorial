@@ -1,5 +1,4 @@
 cmake_minimum_required(VERSION 3.15)
-set(CMAKE_CXX_STANDARD 11)
 project(HelloInstalling)
 
 # Install the binary file of the shared library (e.g. *.dll).
@@ -16,6 +15,11 @@ target_sources(MathsDemo
 target_link_libraries(MathsDemo
     PRIVATE
         Maths::maths_library
+)
+
+target_compile_features(MathsDemo
+    PRIVATE
+        cxx_std_17
 )
 
 # -------------------------------------------------------------------------------------------------------
