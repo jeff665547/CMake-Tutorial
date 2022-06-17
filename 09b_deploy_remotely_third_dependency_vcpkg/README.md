@@ -1,18 +1,18 @@
 To import a custom library/module into the vcpkg dependency management system, we must create and use the self-made registry to tell the vcpkg where to find the custom library/module with the specified version. 
 * In vcpkg, port isn't necessarily a library/module package. Some modularised libraries have many port scripts.
 1. Clone, install, and build the vcpkg as a submodule to an existing application project.
-2. Create a custom registries (e.g. vcpkg-ports) folder containing ports version of our custom library/module with the following information:
-  a. protfile.cmake (@vcpkg-ports/ports/<library/module>)
+2. Create a custom registries (e.g. vcpkg-registries) folder containing ports version of our custom library/module with the following information:
+  a. protfile.cmake (@vcpkg-registries/ports/<library/module>)
     -- This file includes how to build and install our custom library/module via vcpkg framework.
-  b. vcpkg.json (@vcpkg-ports/ports/<library/module>)
+  b. vcpkg.json (@vcpkg-registries/ports/<library/module>)
     -- This file includes the dependencies and their version information used in our custom library/module.
-  c. <library/module>.json (@vcpkg-ports/versions/<X->)
+  c. <library/module>.json (@vcpkg-registries/versions/<X->)
     -- This file includes all the available versions of our custom library/module and the corresponding git-tree information referring to a. and b.
-  d. baseline.json (@vcpkg-ports/versions)
-    -- This file includes the latest version information of each library/module lying in this custom registry (vcpkg-ports). 
+  d. baseline.json (@vcpkg-registries/versions)
+    -- This file includes the latest version information of each library/module lying in this custom registry (vcpkg-registries). 
   e. (optional) <patch file>.patch 
     -- This file includes the patching information used to fix some bugs or adapt for different CMake configuration scenarios.
-3. Commit and push the current information in the custom registry (vcpkg-ports) to the remote repository.
+3. Commit and push the current information in the custom registry (vcpkg-registries) to the remote repository.
 4. Use the custom library/module via the manifest mode (through the following files) of the vcpkg package management system:
   a. vcpkg-configuration.json
     -- This file is used to tell vcpkg where to find the registry information of our custom library/module.
