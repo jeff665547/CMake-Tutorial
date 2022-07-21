@@ -25,6 +25,8 @@
     * Reference and use the installed library through the find_package() and target_link_libraries() commands in the CMakeLists.txt files under the application project.
     * Configuration for generating the Makefile: 
       cmake [build directory] -G "MinGW Makefiles" -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET="x64-mingw-dynamic" or "x64-mingw-static" (accroding to the selected compiler and the building mode.)
+    * For the MSVC compiler version:
+      cmake [build directory] -G "Visual Studio 17" -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET="x64-windows" or "x64-windows-static"
     * Build and install the project:
       cmake --build . --target install
 
